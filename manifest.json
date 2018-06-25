@@ -1,0 +1,20 @@
+{
+  "name": "Strava Heatmap to OSM background",
+  "version": "0.1",
+  "description": "Get a background ready for OSM tracing from Strava heatmaps",
+  "manifest_version": 2,
+  "permissions": [
+    "cookies",
+    "https://www.strava.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.strava.com/heatmap*"],
+      "js": ["heatmapToOSM.js"]
+    }
+  ],
+  "browser_action": { }
+}
